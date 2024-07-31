@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: chatbot-jul30-1
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-ai-dev/ai-template-bootstrap-app:latest # use pre-built to bootstrap 
-        name: app-interface 
+        - image: quay.io/maysunfaisal/chatbot-jul30-1:8984cd3bb7ec6295710a1387a1d640db2a3d3504@sha256:4e494b5a331a31367830b5197453d56a0442a3f80a3e5a24eb124966a8b40d66 # use pre-built to bootstrap 
+          name: app-interface
